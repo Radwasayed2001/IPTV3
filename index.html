@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium IPTV Subscription Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#EC4899'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #4F46E5, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold gradient-text">IPTV<span>Plus</span></a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="/reseller" class="text-gray-700 hover:text-primary transition-colors">Reseller</a>
+                    <a href="/coverage" class="text-gray-700 hover:text-primary transition-colors">Coverage</a>
+                    <a href="/setup" class="text-gray-700 hover:text-primary transition-colors">Setup Guide</a>
+                    <a href="/blog" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
+                    <a href="/contact" class="text-gray-700 hover:text-primary transition-colors">Contact Us</a>
+                    <a href="/about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="/client" class="bg-primary text-white px-6 py-2 rounded-lg flex items-center hover:bg-primary/90 transition-colors">
+                        <i class="fas fa-lock mr-2"></i> Client Area
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="toggleOpen" class="md:hidden text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="collapseMenu" class="hidden md:hidden mt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="/reseller" class="text-gray-700 hover:text-primary transition-colors">Reseller</a>
+                    <a href="/coverage" class="text-gray-700 hover:text-primary transition-colors">Coverage</a>
+                    <a href="/setup" class="text-gray-700 hover:text-primary transition-colors">Setup Guide</a>
+                    <a href="/blog" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
+                    <a href="/contact" class="text-gray-700 hover:text-primary transition-colors">Contact Us</a>
+                    <a href="/about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="/client" class="bg-primary text-white px-6 py-2 rounded-lg inline-flex items-center hover:bg-primary/90 transition-colors">
+                        <i class="fas fa-lock mr-2"></i> Client Area
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3')] opacity-10 bg-cover bg-center"></div>
+        <div class="container mx-auto px-4 relative">
+            <div class="text-center text-white">
+                <h1 class="text-6xl font-bold mb-6" data-aos="fade-up">Premium IPTV Experience</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Access thousands of channels and VOD content with our reliable IPTV service. High quality streams, 24/7 support, and competitive prices.</p>
+                <div class="flex justify-center space-x-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#trial" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105 hover:shadow-lg">Start Free Trial</a>
+                    <a href="#pricing" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all hover:scale-105">Buy Now</a>
+                </div>
+                <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3" alt="TV Streaming" class="mt-12 rounded-lg shadow-2xl mx-auto max-w-4xl floating" data-aos="zoom-in">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Choose Your Plan</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 1 Month Plan -->
+                <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white hover-scale" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-4">1 Month</h3>
+                    <p class="text-4xl font-bold mb-4">$15<span class="text-sm">/month</span></p>
+                    <ul class="mb-8 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i>Full HD Channels</li>
+                        <li><i class="fas fa-check mr-2"></i>24/7 Support</li>
+                        <li><i class="fas fa-check mr-2"></i>VOD Library</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-white text-primary py-2 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105">Select Plan</a>
+                </div>
+
+                <!-- 3 Month Plan -->
+                <div class="bg-gradient-to-br from-pink-500 to-red-600 rounded-2xl p-8 text-white hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4">3 Months</h3>
+                    <p class="text-4xl font-bold mb-4">$35<span class="text-sm">/quarter</span></p>
+                    <ul class="mb-8 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i>Full HD Channels</li>
+                        <li><i class="fas fa-check mr-2"></i>24/7 Support</li>
+                        <li><i class="fas fa-check mr-2"></i>VOD Library</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-white text-primary py-2 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105">Select Plan</a>
+                </div>
+
+                <!-- 6 Month Plan -->
+                <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-8 text-white hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4">6 Months</h3>
+                    <p class="text-4xl font-bold mb-4">$60<span class="text-sm">/6mo</span></p>
+                    <ul class="mb-8 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i>Full HD Channels</li>
+                        <li><i class="fas fa-check mr-2"></i>24/7 Support</li>
+                        <li><i class="fas fa-check mr-2"></i>VOD Library</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-white text-primary py-2 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105">Select Plan</a>
+                </div>
+
+                <!-- 12 Month Plan -->
+                <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-8 text-white hover-scale" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold mb-4">12 Months</h3>
+                    <p class="text-4xl font-bold mb-4">$100<span class="text-sm">/year</span></p>
+                    <ul class="mb-8 space-y-2">
+                        <li><i class="fas fa-check mr-2"></i>Full HD Channels</li>
+                        <li><i class="fas fa-check mr-2"></i>24/7 Support</li>
+                        <li><i class="fas fa-check mr-2"></i>VOD Library</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-white text-primary py-2 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Discover Our Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center hover-scale" data-aos="fade-up">
+                    <i class="fas fa-tv text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">10000+ Channels</h3>
+                    <p class="text-gray-600">Access channels from around the world in HD quality</p>
+                </div>
+                <div class="text-center hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-film text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">VOD Library</h3>
+                    <p class="text-gray-600">Huge collection of movies and TV shows on demand</p>
+                </div>
+                <div class="text-center hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-infinity text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Lifetime Plan</h3>
+                    <p class="text-gray-600">One-time payment for lifetime access</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Events Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Upcoming Live Events</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?ixlib=rb-4.0.3" alt="Sports Event" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">UEFA Champions League</h3>
+                        <p class="text-gray-600">Live coverage of all matches</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3" alt="Entertainment Event" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Grammy Awards</h3>
+                        <p class="text-gray-600">Live from Los Angeles</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1504817343863-5092a923803e?ixlib=rb-4.0.3" alt="Sports Event" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Formula 1 Grand Prix</h3>
+                        <p class="text-gray-600">Every race live in HD</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1586899028174-e7098604235b?ixlib=rb-4.0.3" alt="Entertainment Event" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Oscar Awards</h3>
+                        <p class="text-gray-600">Live red carpet and ceremony</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Timeline -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Quality Timeline</h2>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col items-center mb-8 md:mb-0 hover-scale" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="font-bold">Server Check</h3>
+                </div>
+                <div class="flex flex-col items-center mb-8 md:mb-0 hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3 class="font-bold">Load Balancing</h3>
+                </div>
+                <div class="flex flex-col items-center mb-8 md:mb-0 hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold">Security</h3>
+                </div>
+                <div class="flex flex-col items-center mb-8 md:mb-0 hover-scale" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="font-bold">Speed Test</h3>
+                </div>
+                <div class="flex flex-col items-center mb-8 md:mb-0 hover-scale" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="font-bold">Stream Check</h3>
+                </div>
+                <div class="flex flex-col items-center hover-scale" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3 class="font-bold">Final Quality</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">What Our Customers Say</h2>
+            <div class="testimonial-carousel relative" data-aos="fade-up">
+                <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto hover-scale">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3" alt="Customer" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-bold">John Doe</h4>
+                            <p class="text-gray-600">Verified Customer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Best IPTV service I've ever used. The quality is amazing and customer support is always helpful."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Why Choose Us</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-scale" data-aos="fade-up">
+                    <i class="fas fa-rocket text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Fast Servers</h3>
+                    <p class="text-gray-600">High-speed streaming without buffering</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-headset text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">Always here to help you</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-shield-alt text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Secure Connection</h3>
+                    <p class="text-gray-600">Your data is always protected</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div data-aos="fade-up">
+                    <h3 class="text-xl font-bold mb-4">About Us</h3>
+                    <p class="text-gray-400">Premium IPTV service provider with high-quality streams and excellent customer support.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Setup Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> support@iptvplus.com</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 IPTVPlus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        const toggleOpen = document.getElementById('toggleOpen');
+        const collapseMenu = document.getElementById('collapseMenu');
+
+        toggleOpen.addEventListener('click', () => {
+            collapseMenu.classList.toggle('hidden');
+            toggleOpen.innerHTML = collapseMenu.classList.contains('hidden') 
+                ? '<i class="fas fa-bars text-2xl"></i>' 
+                : '<i class="fas fa-times text-2xl"></i>';
+        });
+
+        // Simple testimonial carousel
+        let currentTestimonial = 0;
+        const testimonials = [
+            {
+                name: "John Doe",
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3",
+                text: "Best IPTV service I've ever used. The quality is amazing and customer support is always helpful."
+            },
+            {
+                name: "Jane Smith",
+                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3",
+                text: "Incredible channel selection and very stable connection. Highly recommended!"
+            },
+            {
+                name: "Mike Johnson",
+                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3",
+                text: "The VOD library is extensive and updated regularly. Great value for money."
+            }
+        ];
+
+        function updateTestimonial() {
+            const testimonialContainer = document.querySelector('.testimonial-carousel');
+            const testimonial = testimonials[currentTestimonial];
+            
+            testimonialContainer.innerHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto hover-scale">
+                    <div class="flex items-center mb-4">
+                        <img src="${testimonial.image}" alt="Customer" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-bold">${testimonial.name}</h4>
+                            <p class="text-gray-600">Verified Customer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"${testimonial.text}"</p>
+                </div>
+            `;
+
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        }
+
+        // Update testimonial every 5 seconds
+        setInterval(updateTestimonial, 5000);
+    </script>
+</body>
+</html>
